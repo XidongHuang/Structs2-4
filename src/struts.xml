@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+
+	<!-- Deploy requiring extension names for Struts -->
+	  
+	<constant name="struts.action.extension" value="action,do,"></constant>
+	
+	<!-- Turn "struts.enable.DynamicMethodInvocation" on (default == false)-->
+	<constant name="struts.enable.DynamicMethodInvocation" value="true"></constant>
+	
+	
+	
+    <package name="default" namespace="/" extends="struts-default">
+
+        <action name="UserAction-update" 
+        	class="com.tony.structs2.action.UserAction" method="test">
+        	<result name="query-success">/success.jsp</result>
+        
+        </action>
+
+
+        <action name="UserAction-*" 
+        	class="com.tony.structs2.action.UserAction" method="{1}">
+        	<result name="{1}-success">/success.jsp</result>
+        
+        </action>
+        <action name="*-save" 
+        	class="com.tony.structs2.action.UserAction" method="test">
+        	<result name="query-success">/success.jsp</result>
+        
+        </action>
+
+        <action name="testDynamicMethodInvocation" 
+        	class="struts.enable.TestDynamicMethodInvocation" method="save">
+        	<result>/success.jsp</result>
+        
+        </action>
+        
+        <!--  
+        <action name="UserAction-delete" 
+        	class="com.tony.structs2.action.UserAction" method="delete">
+        	<result name="delete-success">/success.jsp</result>
+        
+        </action>
+        <action name="UserAction-query" 
+        	class="com.tony.structs2.action.UserAction" method="query">
+        	<result name="query-success">/success.jsp</result>
+        
+        </action>
+
+        -->
+
+    </package>
+    
+    
+
+    
+
+</struts>
