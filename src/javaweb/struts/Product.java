@@ -73,6 +73,9 @@ public class Product implements RequestAware, SessionAware{
 		sessionMap.put("product", this);
 		requestMap.put("test", test);
 		
+		int i = 1/0;
+		
+		
 		return "success";
 		
 	}

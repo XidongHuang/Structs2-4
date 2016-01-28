@@ -40,8 +40,20 @@
         	<result>/success.jsp</result>
         
         </action>
+        
+		<global-results>
+        	<result name="input">/input.jsp</result>
+		</global-results>        
+
+        <global-exception-mappings>
+        	<exception-mapping result="input" exception="java.lang.ArithmeticException"></exception-mapping>
+        </global-exception-mappings>
+		
+        
+        
         <action name="product-save" 
         	class="javaweb.struts.Product" method="save">
+        	
         	<result>/details.jsp</result>
         
         </action>
