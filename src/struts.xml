@@ -12,7 +12,8 @@
 	<!-- Turn "struts.enable.DynamicMethodInvocation" on (default == false)-->
 	<constant name="struts.enable.DynamicMethodInvocation" value="true"></constant>
 	
-	
+	<!-- Turn on static method invoking -->
+	<constant name="struts.ognl.allowStaticMethodAccess" value="true"></constant>
 	
     <package name="default" namespace="/" extends="struts-default">
 
@@ -37,6 +38,11 @@
         <action name="testDynamicMethodInvocation" 
         	class="struts.enable.TestDynamicMethodInvocation" method="save">
         	<result>/success.jsp</result>
+        
+        </action>
+        <action name="product-save" 
+        	class="javaweb.struts.Product" method="save">
+        	<result>/details.jsp</result>
         
         </action>
         
