@@ -75,6 +75,9 @@
 		<action name="testTag" class="javaweb.struts.Product" method="testTag">
 			<result>/common-tag.jsp</result>
 		</action>
+		<action name="save" class="com.tony.structs2.action.UserAction" method="save">
+			<result name="input">/form-tag.jsp</result>
+		</action>
 	
 
     </package>
