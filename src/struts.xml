@@ -16,6 +16,13 @@
 	<constant name="struts.ognl.allowStaticMethodAccess" value="true"></constant>
 	
     <package name="default" namespace="/" extends="struts-default">
+		<global-results>
+        	<result name="input">/input.jsp</result>
+		</global-results>        
+
+        <global-exception-mappings>
+        	<exception-mapping result="input" exception="java.lang.ArithmeticException"></exception-mapping>
+        </global-exception-mappings>
 
         <action name="UserAction-update" 
         	class="com.tony.structs2.action.UserAction" method="test">
@@ -41,13 +48,6 @@
         
         </action>
         
-		<global-results>
-        	<result name="input">/input.jsp</result>
-		</global-results>        
-
-        <global-exception-mappings>
-        	<exception-mapping result="input" exception="java.lang.ArithmeticException"></exception-mapping>
-        </global-exception-mappings>
 		
         
         
@@ -71,6 +71,11 @@
         </action>
 
         -->
+
+		<action name="testTag" class="javaweb.struts.Product" method="testTag">
+			<result>/common-tag.jsp</result>
+		</action>
+	
 
     </package>
     

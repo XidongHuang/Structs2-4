@@ -1,5 +1,7 @@
 package javaweb.struts;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 
 import org.apache.struts2.interceptor.RequestAware;
@@ -94,6 +96,31 @@ public class Product implements RequestAware, SessionAware{
 	public void setRequest(Map<String, Object> arg0) {
 
 		this.requestMap = arg0;
+	}
+	
+	
+	private List<Person> persons = new ArrayList<Person>();
+	
+	public List<Person> getPersons() {
+		return persons;
+	}
+	
+	public String testTag(){
+		
+		this.productId = 1001;
+		this.productDesc = "CPU";
+		this.productName = "Intel";
+		this.productPrice = 1000;
+		
+		
+		persons.add(new Person("CCC",33));
+		persons.add(new Person("DDD",44));
+		persons.add(new Person("EEE",55));
+		persons.add(new Person("BBB",22));
+		persons.add(new Person("AAA",11));
+		
+		return "success";
+		
 	}
 	
 	
