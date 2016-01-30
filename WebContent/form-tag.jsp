@@ -48,8 +48,12 @@
 		<s:radio name="gender" list="#{'1':'Male','0':'Female' }"
 			label="Gender"></s:radio>
 
+
+		<!-- 
+			In server side, use collection type to make sure re-show can work!
+		 -->
 		<s:checkboxlist list="#request.cities" listKey="cityId"
-			listValue="cityName" label="City" name="cities"></s:checkboxlist>
+			listValue="cityName" label="City" name="city"></s:checkboxlist>
 
 		<s:select list="{11,12,13,14,15,16,17,18,19,20}" headerKey=""
 			headerValue="Please select" name="age" label="Age">

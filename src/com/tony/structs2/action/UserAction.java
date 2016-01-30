@@ -1,6 +1,7 @@
 package com.tony.structs2.action;
 
-import com.opensymphony.xwork2.ActionContext;
+import java.util.Arrays;
+import java.util.List;
 
 public class UserAction {
 
@@ -10,7 +11,36 @@ public class UserAction {
 	private String password;
 	private boolean married = true;
 	
+	private String gender;
+	private List<String> city;
+	private String age;
 	
+	
+	
+	public String getGender() {
+		return gender;
+	}
+
+	public void setGender(String gender) {
+		this.gender = gender;
+	}
+
+	public List<String> getCity() {
+		return city;
+	}
+
+	public void setCity(List<String> city) {
+		this.city = city;
+	}
+
+	public String getAge() {
+		return age;
+	}
+
+	public void setAge(String age) {
+		this.age = age;
+	}
+
 	public boolean isMarried() {
 		return married;
 	}
@@ -61,17 +91,20 @@ public class UserAction {
 		ua.setUserName("tony");
 		
 		
-		ActionContext.getContext().getValueStack().push(ua);
+//		ActionContext.getContext().getValueStack().push(ua);
 		
 		return "input";
 	}
 
 
 
+	
+
+
 	@Override
 	public String toString() {
 		return "UserAction [userId=" + userId + ", userName=" + userName + ", desc=" + desc + ", password=" + password
-				+ ", married=" + married + "]";
+				+ ", married=" + married + ", gender=" + gender + ", city=" + city + ", age=" + age + "]";
 	}
 
 	public String update() {
