@@ -1,23 +1,33 @@
 package com.tony.struts2.app;
 
 public class Department {
+	private Integer deptId;
+	private String deptName;
 	public Department() {
 		super();
 	}
 
-	public Department(Integer departmentId, String deptName) {
+	
+
+	public Department(Integer deptId, String deptName) {
 		super();
-		this.departmentId = departmentId;
+		this.deptId = deptId;
 		this.deptName = deptName;
 	}
 
-	public Integer getDepartmentId() {
-		return departmentId;
+
+
+	public Integer getDeptId() {
+		return deptId;
 	}
 
-	public void setDepartmentId(Integer departmentId) {
-		this.departmentId = departmentId;
+
+
+	public void setDeptId(Integer deptId) {
+		this.deptId = deptId;
 	}
+
+
 
 	public String getDeptName() {
 		return deptName;
@@ -27,6 +37,4 @@ public class Department {
 		this.deptName = deptName;
 	}
 
-	private Integer departmentId;
-	private String deptName;
 }

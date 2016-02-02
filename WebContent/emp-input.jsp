@@ -9,15 +9,19 @@
 </head>
 <body>
 	
+	<%
+		request.setAttribute("theme", "xhtml");
+	%>
+	
 	<s:form action="emp-save">
 		<s:textfield name="name" label="Name"></s:textfield>
 		<s:password name="password" label="Password"></s:password>
-		
-		<s:radio name="gender" list="#{'1':'Male', '0':'Female'}" label="Gender"></s:radio>
+		<s:radio name="gender" list="#{'1':'Male','0':'Female' }" label="Gender"></s:radio>
 		
 		<s:select list="#request.depts" listKey="deptId"
 			listValue="deptName" name="dept" label="Department"></s:select>
-		<s:checkboxlist list="#request.roles" likeKey="roleId"
+			
+		<s:checkboxlist list="#request.roles" listKey="roleId"
 			listValue="roleName" name="roles" label="Role"></s:checkboxlist>
 			
 		<s:textarea name="desc" label="Desc"></s:textarea>

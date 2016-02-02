@@ -8,40 +8,16 @@ import org.apache.struts2.interceptor.RequestAware;
 public class Employee implements RequestAware {
 
 	private Map<String, Object> requestMap = null;
-	
+
 	private Dao dao = new Dao();
-	
+
 	private String name;
 	private String password;
 	private String gender;
 	private String dept;
-	
+
 	private List<String> roles;
 	private String desc;
-	
-	public String input(){
-		
-		requestMap.put("depts", dao.getDepartments());
-		requestMap.put("roles", dao.getRoles());
-		
-		return "input";
-	}
-
-	public Map<String, Object> getRequestMap() {
-		return requestMap;
-	}
-
-	public void setRequestMap(Map<String, Object> requestMap) {
-		this.requestMap = requestMap;
-	}
-
-	public Dao getDao() {
-		return dao;
-	}
-
-	public void setDao(Dao dao) {
-		this.dao = dao;
-	}
 
 	public String getName() {
 		return name;
@@ -91,31 +67,30 @@ public class Employee implements RequestAware {
 		this.desc = desc;
 	}
 
+	public String input() {
+
+		requestMap.put("depts", dao.getDepartments());
+		requestMap.put("roles", dao.getRoles());
+
+		return "input";
+	}
+
 	@Override
 	public void setRequest(Map<String, Object> arg0) {
-			this.requestMap = arg0;
-	
-	}
-	
-	
-	
-	
+		this.requestMap = arg0;
 
-	public Employee(String name, String password, String gender, String dept, List<String> roles, String desc) {
-		super();
-		this.name = name;
-		this.password = password;
-		this.gender = gender;
-		this.dept = dept;
-		this.roles = roles;
-		this.desc = desc;
 	}
 
-	public String save(){
+	@Override
+	public String toString() {
+		return "Employee [name=" + name + ", password=" + password + ", gender=" + gender + ", dept=" + dept
+				+ ", roles=" + roles + ", desc=" + desc + "]";
+	}
+
+	public String save() {
 		System.out.println("save: " + this);
-		
-		
+
 		return "save";
 	}
-	
+
 }
